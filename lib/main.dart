@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:karanganbunga/screen/home_screen.dart';
 import 'package:karanganbunga/screen/splash_screen.dart';
 
 void main() => runApp(MyApp());
