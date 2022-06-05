@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:karanganbunga/home_screen.dart';
-import 'package:karanganbunga/list_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -85,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   box.put('isLogin', true);
 
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => ListScreen()),
+                    MaterialPageRoute(builder: (_) => LoginScreen()),
                   );
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
