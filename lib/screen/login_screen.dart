@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:karanganbunga/home_screen.dart';
-import 'package:karanganbunga/signup_screen.dart';
-import 'package:karanganbunga/'
+import 'package:karanganbunga/list_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -16,139 +15,91 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController passwordController = TextEditingController();
 
   bool hidePass = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Login Screen'),
-        ),
-        backgroundColor: Colors.white,
-        resizeToAvoidBottomInset: false, // set it to false
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Image.asset('images/login1.png', width: 280.0),
-              Text('Welcome Back!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
-              SizedBox(height: 10),
-              Text(
-                'Log in to your existant account of Q Afture',
-                style: TextStyle(color: Colors.black.withOpacity(0.5)),
-              ),
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                  child: TextFormField(
-                      controller: userNameController,
-                      decoration: InputDecoration(
-                          labelText: "Username",
-                          prefixIcon: Icon(Icons.person_outline, size: 20),
-                          hintText: "Masukan Username",
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          )))),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 0),
-                child: TextFormField(
-                  controller: passwordController,
-                  obscureText: hidePass,
-                  decoration: InputDecoration(
-                    labelText: "Password",
-                    prefixIcon: Icon(Icons.lock_open_outlined, size: 20),
-                    hintText: "Masukan Password",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          Text('Login', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+          Expanded(
+              child: Image.asset(
+            'assets/images/undraw_Specs_re_546x.png',
+            height: 1000,
+          )),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+            child: TextFormField(
+              controller: userNameController,
+              decoration: InputDecoration(
+                label: Text('Username'),
+                hintText: 'Masukkan username',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
                 ),
               ),
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 0),
-                  child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                    TextButton(
-                        onPressed: () {
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Fitur masih dalam pengembangan')));
-                        },
-                        child: Text('Forgot Password?'))
-                  ])),
-              SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                width: 250,
-                height: 50,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  onPressed: () {
-                    if (userNameController.text == 'user_uts' && passwordController.text == "pass_uts") {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text('Berhasil Login'),
-                      ));
-
-                      var box = Hive.box('userBox');
-                      box.put('isLogin', true);
-
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => HomeScreen()));
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text('Username atau Password salah'),
-                      ));
-                    }
-                  },
-                  child: Text('Login'),
-                ),
-              ),
-              SizedBox(height: 25),
-              Text(
-                'Or connect using',
-                style: TextStyle(
-                  color: Colors.black.withOpacity(0.6),
-                ),
-              ),
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                    ElevatedButton.icon(
-                      icon: Icon(Icons.facebook),
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.blue,
-                        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                      ),
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Fitur masih dalam pengembangan')));
-                      },
-                      label: Text('Facebook'),
-                    ),
-                    ElevatedButton.icon(
-                      icon: Icon(Icons.g_mobiledata_outlined),
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.red,
-                        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                      ),
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Fitur masih dalam pengembangan')));
-                      },
-                      label: Text('Google'),
-                    ),
-                  ])),
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-                  child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Text('Dont have an account?'),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignupScreen()));
-                      },
-                      child: Text(
-                        "Sign up",
-                      ),
-                    ),
-                  ])),
-              SizedBox(height: 20),
-            ],
+            ),
           ),
-        ));
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+            child: TextFormField(
+              controller: passwordController,
+              obscureText: hidePass,
+              decoration: InputDecoration(
+                label: Text('Password'),
+                hintText: 'Masukkan password',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    print('hide pass = $hidePass');
+                    setState(() {
+                      hidePass = !hidePass;
+                    });
+                  },
+                  icon: Icon(hidePass ? Icons.visibility : Icons.visibility_off),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 250,
+            height: 50,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+              onPressed: () {
+                if (userNameController.text == 'azis' && passwordController.text == "azis") {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('berhasil login'),
+                    ),
+                  );
+
+                  var box = Hive.box('userBox');
+                  box.put('isLogin', true);
+
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => ListScreen()),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('username atau password salah'),
+                    ),
+                  );
+                }
+              },
+              child: Text('Login'),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
