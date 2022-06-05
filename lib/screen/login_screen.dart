@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               onPressed: () {
-                if (userNameController.text == 'azis' && passwordController.text == "azis") {
+                if (userNameController.text == 'karbung' && passwordController.text == "karbung") {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text('berhasil login'),
@@ -90,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('username atau password salah'),
+                      content: Text('Maaf username atau password yang anda masukkan salah'),
                     ),
                   );
                 }
