@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:karanganbunga/main.dart';
+import 'package:hive/hive.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
