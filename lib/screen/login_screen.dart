@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:karanganbunga/main.dart';
-import 'package:hive/hive.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -81,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   );
 
                   var box = Hive.box('userBox');
-                  box.put('isLogin', true);
+                  box.put('is Login', true);
 
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (_) => LoginScreen()),
