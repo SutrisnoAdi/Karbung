@@ -30,6 +30,8 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Image.asset(
               "assets/images/karangan bunga.jpg",
             )),
+        const SizedBox(height: 150),
+        const CircularProgressIndicator(),
       ]))),
     );
   }
