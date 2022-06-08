@@ -22,14 +22,18 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          child: Text(
-            'Splash Screen',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        body: Center(
+            child: Container(
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+        SizedBox(
+          width: MediaQuery.of(context).size.width / 2,
+          child: Image.asset(
+            "assets/images/karangan bunga.jpg",
           ),
         ),
-      ),
-    );
+        const SizedBox(height: 150),
+        const CircularProgressIndicator(),
+      ]),
+    )));
   }
 }
