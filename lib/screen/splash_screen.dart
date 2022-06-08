@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Container(
       child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
         SizedBox(
-          width: MediaQuery.of(context).size.width / 5,
+          width: MediaQuery.of(context).size.width / 2,
           child: Image.asset(
             "assets/images/karangan bunga.jpg",
           ),
