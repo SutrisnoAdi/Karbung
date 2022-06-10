@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Image.asset('assets/images/login.png', width: 280.0),
+              Image.asset('assets/images/Login1.png', width: 280.0),
               Text('Welcome back!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
               SizedBox(height: 10),
               Text(
