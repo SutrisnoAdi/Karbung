@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:karanganbunga/screen/login_screen.dart';
+import 'package:karanganbunga/screen/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -137,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Text('Dont have an account?'),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignupScreen()));
                       },
                       child: Text(
                         "Sign up",

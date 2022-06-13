@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:karanganbunga/screen/login_screen.dart';
+import 'package:karanganbunga/screen/signup_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
