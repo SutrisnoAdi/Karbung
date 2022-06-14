@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+
+import 'package:karanganbunga/screen/home_screen.dart';
+import 'package:karanganbunga/screen/splash_screen.dart';
+
 import 'package:karanganbunga/screen/login_screen.dart';
 
 void main() => runApp(MyApp());
@@ -11,14 +15,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // Application name
 
-      title: 'Flutter Stateful Clicker Counter',
+      title: 'Karangan bunga',
+
       theme: ThemeData(
         // Application theme data, you can set the colors for the application as
         // you want
         primarySwatch: Colors.blue,
       ),
-      // home: MyHomePage(title: 'Flutter Demo Clicker Coun'),
-      home: LoginScreen(),
+
+      home: SplashScreen(),
+
     );
   }
 }
