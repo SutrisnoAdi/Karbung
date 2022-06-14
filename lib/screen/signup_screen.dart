@@ -23,7 +23,7 @@ class _SignupScreenState extends State<SignupScreen> {
         body: SingleChildScrollView(
             child: Column(children: [
           SizedBox(height: 20),
-          Text("Let's Get Started", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+          Text("Daftar Sekarang", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
           Text(
             'Creat an account to Q alure to get all Leatures',
             style: TextStyle(color: Colors.black.withOpacity(0.5)),
